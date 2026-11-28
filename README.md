@@ -86,6 +86,21 @@ version):
 | `scale-curve-to-length` | `ScaleCurveToLength.py` | Scales a curve, open or closed, to a length you enter. |
 | `straighten-circles-to-cplane` | `Straighten circles to cplane.py` | Rotates each selected circle around its center so it lies flat in the world XY plane. |
 
+### Mirroring
+
+| Folder | Script | What it does |
+| --- | --- | --- |
+| `mirror-world` | `Mirror World.py` | Mirrors the selected objects about the world origin with no picking, keeping the originals (like Mirror with Copy=Yes). Only the originals stay selected. `X` mirrors across the world X axis (top↔bottom in Top view), `Y` across the world Y axis (left↔right), and `Both` makes 3 copies, one in each of the other quadrants. The copies are made by Rhino's own Mirror command, so Record History works the same as with regular Mirror. |
+
+The axis is the first prompt, so an alias can answer it by adding the word
+after the path:
+
+```
+MMX                ! _-RunPythonScript "/full/path/to/Mirror World.py" X
+MMY                ! _-RunPythonScript "/full/path/to/Mirror World.py" Y
+MMM                ! _-RunPythonScript "/full/path/to/Mirror World.py" Both
+```
+
 ### Layers
 
 | Folder | Script | What it does |
